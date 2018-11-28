@@ -20,6 +20,20 @@ public class OSCManager : MonoBehaviour {
         // Set remote port;
         transmitter.RemotePort = remotePort;
     }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus) return;
+
+        // Creating a transmitter.
+        transmitter = gameObject.AddComponent<OSCTransmitter>();
+
+        // Set remote host address.
+        transmitter.RemoteHost = remoteHost;
+
+        // Set remote port;
+        transmitter.RemotePort = remotePort;
+    }
 	
 	// Update is called once per frame
 	void Update () {

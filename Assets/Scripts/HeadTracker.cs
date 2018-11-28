@@ -65,17 +65,17 @@ public class HeadTracker : MonoBehaviour
 		{
 			var message = new OSCMessage("/ConductAR/headPose");
 
-            message.AddValue(OSCValue.String("/headPosition/x" + headPosition.x));
-            message.AddValue(OSCValue.String("/headPosition/y" + headPosition.y));
-            message.AddValue(OSCValue.String("/headPosition/z" + headPosition.z));
+            message.AddValue(OSCValue.String("/headPosition/x/" + headPosition.x));
+            message.AddValue(OSCValue.String("/headPosition/y/" + headPosition.y));
+            message.AddValue(OSCValue.String("/headPosition/z/" + headPosition.z));
 
-            message.AddValue(OSCValue.String("/headRotation/x" + headRotation.eulerAngles.x));
-            message.AddValue(OSCValue.String("/headRotation/y" + headRotation.eulerAngles.y));
-            message.AddValue(OSCValue.String("/headRotation/z" + headRotation.eulerAngles.z));
+            message.AddValue(OSCValue.String("/headRotation/x/" + headRotation.eulerAngles.x));
+            message.AddValue(OSCValue.String("/headRotation/y/" + headRotation.eulerAngles.y));
+            message.AddValue(OSCValue.String("/headRotation/z/" + headRotation.eulerAngles.z));
 
-            message.AddValue(OSCValue.String("/lookAtPoint/x" + lookAtPoint.x));
-            message.AddValue(OSCValue.String("/lookAtPoint/y" + lookAtPoint.y));
-            message.AddValue(OSCValue.String("/lookAtPoint/z" + lookAtPoint.z));
+            message.AddValue(OSCValue.String("/lookAtPoint/x/" + lookAtPoint.x));
+            message.AddValue(OSCValue.String("/lookAtPoint/y/" + lookAtPoint.y));
+            message.AddValue(OSCValue.String("/lookAtPoint/z/" + lookAtPoint.z));
 
             oscManager.transmitter.Send(message);
 		}
